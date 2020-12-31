@@ -14,6 +14,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MesssagesSentComponent } from './messsages-sent/messsages-sent.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { SignupComponent } from './signup/signup.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { SignupComponent } from './signup/signup.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

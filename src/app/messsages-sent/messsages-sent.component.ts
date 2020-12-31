@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class MesssagesSentComponent implements OnInit {
 
   constructor(private service:MessageService, private local:LocalStorageService,private route: Router) { }
+  firstname:any="";
 
   list:any=[];
   ngOnInit(): void {
@@ -53,5 +54,30 @@ export class MesssagesSentComponent implements OnInit {
       )
 
     }
+
+    Search(){
+      if(this.firstname ==""){
+        this.ngOnInit();
+      }
+      else{
+      
+        this.list=Object.values(this.list).filter(res=>{
+  
+          console.log(res)
+             return res.userreceive.nom.toLocaleLowerCase().match(
+            this.firstname.toLocaleLowerCase());
+          //  return res.employee_name.match(
+          //    this.firstname);
+        })
+        
+      }
+    }
+
+    key:string='id'
+reverse:boolean=false;
+  sort(key){
+    this.key=key;
+    this.reverse=!this.reverse;
+  }
    
 }

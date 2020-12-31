@@ -23,6 +23,7 @@ export class SignupComponent implements OnInit {
       data=>{
         console.log(data);
         alert("Welcome to Messenger");
+        this.route.navigate([""])
       },err=>{
         console.log(err);
       }

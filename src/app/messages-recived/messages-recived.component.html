@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let m of list">
+      <tr *ngFor="let m of list |paginate:{itemsPerPage:5,currentPage:p};">
         <td>{{m.usersend.nom}}</td>
         <td>{{m.sujet}}</td>
         <td>{{m.contenu}}</td>
@@ -19,4 +19,6 @@
       </tr>
    
     </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
   </table>
