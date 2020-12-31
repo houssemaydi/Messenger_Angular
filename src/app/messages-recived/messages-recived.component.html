@@ -1,0 +1,22 @@
+
+<h1>Inbox</h1>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        
+        <th scope="col">From</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of list">
+        <td>{{m.usersend.nom}}</td>
+        <td>{{m.sujet}}</td>
+        <td>{{m.contenu}}</td>
+        <td><button class="btn btn-info" (click)="checkMessage(m.id)">More information</button></td>
+
+      </tr>
+   
+    </tbody>
+  </table>
